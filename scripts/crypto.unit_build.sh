@@ -194,7 +194,7 @@ fi
 execute bash -c "sed -e 's~@~$OPT_DIR~g' $SCRIPT_DIR/pinned_toolchain.cmake &> $BUILD_DIR/pinned_toolchain.cmake"
 
 echo "${COLOR_CYAN}====================================================================================="
-echo "======================= ${COLOR_WHITE}Starting EOSIO Dependency Install${COLOR_CYAN} ===========================${COLOR_NC}"
+echo "======================= ${COLOR_WHITE}Starting CRYPTO.UNIT Dependency Install${COLOR_CYAN} ===========================${COLOR_NC}"
 execute cd $SRC_DIR
 set_system_vars # JOBS, Memory, disk space available, etc
 echo "Architecture: ${ARCH}"
@@ -203,7 +203,7 @@ execute cd $REPO_ROOT
 
 echo ""
 echo "${COLOR_CYAN}========================================================================"
-echo "======================= ${COLOR_WHITE}Starting EOSIO Build${COLOR_CYAN} ===========================${COLOR_NC}"
+echo "======================= ${COLOR_WHITE}Starting CRYPTO.UNIT Build${COLOR_CYAN} ===========================${COLOR_NC}"
 if $VERBOSE; then
    echo "CXX: $CXX"
    echo "CC: $CC"
@@ -226,15 +226,29 @@ execute cd $REPO_ROOT 1>/dev/null
 
 TIME_END=$(( $(date -u +%s) - $TIME_BEGIN ))
 
-echo " _______  _______  _______ _________ _______"
-echo "(  ____ \(  ___  )(  ____   __   __ (  ___  )"
-echo "| (    \/| (   ) || (    \/   ) (   | (   ) |"
-echo "| (__    | |   | || (_____    | |   | |   | |"
-echo "|  __)   | |   | |(_____  )   | |   | |   | |"
-echo "| (      | |   | |      ) |   | |   | |   | |"
-echo "| (____/\| (___) |/\____) |___) (___| (___) |"
-echo "(_______/(_______)\_______)\_______/(_______)"
-echo "=============================================${COLOR_NC}"
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+
+echo "      o__ __o     o__ __o    \o       o/   o__ __o    ____o__ __o____     o__ __o           o         o    o          o   __o__  ____o__ __o____ ${COLOR_RED}"
+echo "     /v     v\   <|     v\    v\     /v   <|     v\    /   \   /   \     /v     v\         <|>       <|>  <|\        <|>    |     /   \   /   \  ${COLOR_RED}"
+echo "    />       <\  / \     <\    <\   />    / \     <\        \o/         />       <\        / \       / \  / \\ o      / \   / \         \o/       ${COLOR_RED}"
+echo "  o/             \o/     o/      \o/      \o/     o/         |        o/           \o      \o/       \o/  \o/ v\     \o/   \o/          |        ${COLOR_RED}"
+echo " <|               |__  _<|        |        |__  _<|/        < >      <|             |>      |         |    |   <\     |     |          < >       ${COLOR_RED}"
+echo "   \\              |       \      / \       |                 |         \\           //      < >       < >  / \    \o  / \   < >          |        ${COLOR_RED}"
+echo "    \         /  <o>       \o    \o/      <o>                o          \         /    o    \         /   \o/     v\ \o/    |           o        ${COLOR_RED}"
+echo "     o       o    |         v\    |        |                <|           o       o    <|>    o       o     |       <\ |     o          <|        ${COLOR_RED}"
+echo "     <\__ __/>   / \         <\  / \      / \               / \          <\__ __/>    < >    <\__ __/>    / \        < \  __|>_        / \       ${COLOR_RED}"
+echo "=================================================================================================================================================${COLOR_RED}"
+
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
 
 echo "${COLOR_GREEN}EOSIO has been successfully built. $(($TIME_END/3600)):$(($TIME_END%3600/60)):$(($TIME_END%60))"
 echo "${COLOR_GREEN}You can now install using: ${SCRIPT_DIR}/eosio_install.sh${COLOR_NC}"
